@@ -1,0 +1,268 @@
+1. What's JDK, JRE, JVM?
+   JDK - Java Development Kit
+         We need JDK if we want to develop java applications
+
+   JRE - Java Runtime Environment
+   		 By using JRE, you can only run already compiled java programs
+
+   JVM - Java Virtual Machine executes(converts java byte code to binary) java byte
+   			 Compiler
+   Source Code  -> Binary Code(0, 1)
+
+             Compiler            JVM
+   Source Code  -> Java Byte Code -> Binary Code(0, 1)
+
+2. What does compiler do?
+   It translates high level code into low level machine code
+
+3. Why java is platform independent?
+   Because for java to adopt new platform, they need to create new JVM
+   which is much easier than creating new compiler
+
+4. What are the primitives in Java?
+   They are basic data types in Java:
+   byte, short, int, long -> whole numbers
+   float, double          -> decimal point numebrs     
+   boolean                -> true or false
+   char                   -> single char
+
+
+5. What's the difference between String and StringBuilder?
+   String is immutable(once object created, we cannot change its value(properties)) and StringBuilder is mutable(properties are changable).
+
+   When you would use String and when StringBuilder?
+   when we have a lot of changes on our 'string' value, it is better to use StringBuilder
+   because every change on String value will create new String.
+
+6. How to find number of characters in the String?
+   .length();
+
+7. How to compare two strings on equality?
+   .equals()
+
+8. Can we compare two strings on equality with == operator?
+   No, we should use .equals()
+
+9. How does == operator work with two object references?
+   It will check if two references are pointing to the same object or not.
+
+10. What's StringBuffer vs StrignBuilder?
+   StringBuffer is thread safe and StringBuilder is not.
+   
+11. What's StringPool?
+   It is memory for String objects in the heap. Java will reuse same string values from StringPool to save memory.
+
+12. What are the wrapper classes in java?
+	Object representations of the primitives in Java.
+	byte  	-> Byte
+	short 	-> Short
+	int   	-> Integer
+	long    -> Long
+	float   -> Float
+	double  -> Double
+	char    -> Character
+	boolean -> Boolean
+
+	String str = "123";
+	int num = Integer.parseInt(str);
+
+13. When you would use while loop? And when you would use for loop?
+	We use while when we don't know number iterations in advance
+	We use for loop when we know number iterations in advance
+
+14. What's difference between Array and ArrayList?
+    - Array is fixed sice and ArrayList is resizable
+    - Array can work with primitives and Objects but ArrayList works only with Objects
+
+15. What's Varargs in Java?
+	- by using varargs we can create method that can take dynamic number of arguments
+	- it works inside the method exactly as array
+	- varargs can be used in method argument only and only one vararg per method
+
+16. What's constructor in java?
+	- It is special method in Java with same name as class name to create an object
+
+17. Can you overload constructor?
+	- Yes, we can
+
+18. What's default constructor?
+	- empty constructor without parameters provided by java
+	- if class doesn't have any constructors, java will provide default constructor
+
+19. What's static keyword in Java?
+	- the static variables and methods belong to class and not to specifc object.
+	- we don't need to create object to call them, we use them by class name
+
+20. What's final keyword in Java?
+	- final variable cannot be changed(reassinged)
+	- final class cannot be inherited
+	- final method cannot be overridden
+
+		How to prevent your method to be ever overridden?
+		- make it final
+
+21. What are the access modifiers in Java?
+	public      - accessible from anywhere
+	protected   - withing the same package or subclasses from different packages
+	default     - withing the same package only
+	private     - within the same class
+
+22. What's static block in java?
+	Block of code that will be executed one time when this class is used
+
+23. What's initializer block?
+	Block of code that run before constuctor
+
+24. Can you tell me about OOP in java?
+	OOP is Object-Oriented Programming. In Java we have 4 consepts of OOP
+	Encapsulation, Inheritance, Abstraction, and Polimorphism
+
+25. What's Encapsulation in Java?
+	Data pretection mechanism from the client code
+
+26. How to achieve encapsulation?
+	1. Make instance variables private
+	2. Provide public getters and setters
+
+27. What is the relationship between parent class and child class?
+	Child class inherits visible variables and methods from the parent class.
+
+28. What's Inheritance in java?
+	It is concept where one class can inherit visible properties and methods from another class. Parent child relationship || super class subclass relationship.
+
+29. Can you give example of using inheritance in your project?
+	I have base class in my framework with reusable methods and some properties and we ingerited this class from other test classes to reuse them.
+
+30. Can one class extend multiple classes at the same time in Java?
+	No, we cannot.
+
+31. Can one class implement multiple interfaces at the same time?
+	Yes, we can.
+
+32. What's the difference between overriding and overloading?
+	- the same class when we have multiple methods with the same name but different arguments.
+	- overriding is when we override the parent class or interface method in the child class.
+	  1. Most of the method signatures should be the same
+	  2. Child class access modifier should be same or more visible
+	  3. Return type should be the same or covariant
+	  4. Child class cannot declare bigger exception than parent class
+
+33. What's abstraction in java?
+	Abstraction lets us focus what object does instead of how it does by hidding implementation details. We achieve abstraction by using abstrct methods.
+
+34. What's difference between abstract class and interface?
+	- Interface can have only abstract methods(except static and default) and abstract class can have abstract and regular methods and properties.
+	- we can extend one abstract class and implement multiple interfaces.
+
+35. Can you give me example of using abstraction in your project?
+	- I don't use abstraction.
+	- I have abstract templates to locate elements in my framework and we implement them in my steps classes.
+
+36. What's Polymorphism in java?
+	The ability of object to take many different forms.
+	List<String> list = new ArrayList<>();
+	list = new LinkedList<>();
+
+37. Can you give me example of using polymorphism in your project?
+	WebDriver driver = new ChromeDriver();
+	// WebDriver driver = new FirefoxDriver();
+
+38. What's the helper class for arrays(for sorting, searching)? 
+	Arrays is helper class for array
+	Arrays.sort()
+
+39. How to get number of elements in the array?
+	int[] nums = {1, 2, 3, 4, 5, 9, 9};
+	System.out.println(nums.length);
+
+40. What's collection framework in java?
+	It is framework provided by java to work with collection of data.
+	List, Set, Map(it is not part of the framework)
+
+41. How does ArrayList work internally?
+	ArrayList works internally with array
+
+42. What's the initial capacity(size of internal array) of ArrayList?
+	10
+
+43. What's Set in Java?
+	It is unique collection of data
+
+44. What's Map in Java?
+	Key value data collection and keys are unique in map.
+
+45. How do you iterate over the map?
+	We can iterate over the map by using keySet() method that returns the all keys.
+	Once we have keys we can easily find out values.
+
+46. What's the difference between HashMap and Hashtable?
+	Hashtbale doesn't allow null key and null values
+	HashMap allows one null key and multiple null values
+
+47. What's TreeMap? What's LinkedHashMap?
+	TreeMap - sorted by keys implementation of the map
+	LinkedHashMap - maintains insertion order
+
+48. What's Queue data structure?
+	FIFO - First In, First Out data structure
+
+49. What's Stack data structure?
+	LIFO - Last In, First Out data structure
+
+50. What's the helper class for collection framework in Java(for sorting, searching)?
+	Collections is helper class for collection framework
+
+51. Could you explain about upcasting vs downcasting?
+	Person <- Student
+
+	// downcasting
+	Person obj = new Student();
+	Student student = (Student)obj;
+	student.study();
+
+	// upcasting
+	Student obj2 = new Student();
+	Person person = obj2;
+
+52. How to handle exceptions in Java?
+	by using try catch statement
+
+	try {
+		...
+		...
+	} catch (RuntimeException e) {
+		// handle it
+
+	}
+
+53. When do you get NullPointerException?
+	When object is null and we try to use some property or method to this object.
+	String str = null;
+	System.out.println(str.length()); // NullPointerException
+
+	if (str == null) {
+
+	}
+
+54. What's the difference between runtime and checked exceptions?
+	- we must hanlde checked exceptions but it is optional to handle runtime exceptions
+	- All checked exceptions extend from Exception class(except RuntimeException)
+	- All runtime exceptions extend from RutimeException class
+
+55. What does finally block do?
+	- it always runs(if there is exceotion or not) after try catch
+	- usually it is used to close resources
+
+56. Can you catch multiple exceptions in the same try statement?
+	Yes, we can.
+	try {
+
+	} catch(NullPointerException e) {
+
+	} catch(RuntimeException e1) {
+
+	}
+
+58. What's Error? Do you handle or throw errors in your project?
+	Erorr is system level failure. Errors are thrown by Java Virtual Machine and they shouldn't be handled in application level.
+	
